@@ -32,7 +32,13 @@ The analysis revealed valuable insights into PPP loan distribution across differ
 
 # Note:
 The queries provided in this README are high-level summaries. For detailed SQL queries and specific code, please refer to the corresponding code files in the repository.
+# Future Work To be continued...
 
+Stay tuned for the next phase of this project! We will be diving deeper into the dataset, asking specific questions, and retrieving the data to conduct in-depth analyses. We plan to create comprehensive Power BI reports that will answer these questions and provide valuable insights.
+
+Have specific questions in mind? Feel free to share your ideas or concerns. We are committed to exploring the data thoroughly to uncover meaningful patterns and trends.
+
+Thank you for your interest in our project. More updates coming soon
 # Data Sources
 # PPP Loan Data
 The PPP loan data used in this analysis was obtained from the U.S. Small Business Administration (SBA) through the Freedom of Information Act (FOIA). The dataset contains detailed information about the Paycheck Protection Program loans distributed during the COVID-19 pandemic.
@@ -44,11 +50,4 @@ The Size Standards Reference provides information about the size standards used 
 # Document Link:
 [SBA Size Standards Reference](https://www.sba.gov/document/support-table-size-standards)https://www.sba.gov/document/support-table-size-standards
 
-# Future Work
-# To be continued...
 
-Stay tuned for the next phase of this project! We will be diving deeper into the dataset, asking specific questions, and retrieving the data to conduct in-depth analyses. We plan to create comprehensive Power BI reports that will answer these questions and provide valuable insights.
-
-Have specific questions in mind? Feel free to share your ideas or concerns. We are committed to exploring the data thoroughly to uncover meaningful patterns and trends.
-
-Thank you for your interest in our project. More updates coming soon
