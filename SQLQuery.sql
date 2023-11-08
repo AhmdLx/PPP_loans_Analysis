@@ -1182,13 +1182,13 @@ group by BorrowerName ,
          UPPER (BorrowerCity)   ,
          LEFT(BORROWERZIP , 5)  ,
          JobsReported ,
-		 BorrowerState ,
-		 RuralUrbanIndicator , 
+	 BorrowerState ,
+	 RuralUrbanIndicator , 
          HubzoneIndicator ,
          Race ,
-		 Ethnicity ,
+	 Ethnicity ,
          Gender ,
-		 Veteran
+	 Veteran
 having count (*) > 1
 ORDER BY BorrowerName
 --745,676 ROWS
@@ -1596,10 +1596,10 @@ FROM public_all
 
 --AFTER external SEARCH THESE ARE THE NON PROFIT AND (THE OTHER will be PROFIT)
 
---	501(c) – Non Profit except 3,4,6,
---	501(c)19 – Non Profit Veterans
---	501(c)3 – Non Profit
---	501(c)6 – Non Profit Membership
+--	501(c) Â– Non Profit except 3,4,6,
+--	501(c)19 Â– Non Profit Veterans
+--	501(c)3 Â– Non Profit
+--	501(c)6 Â– Non Profit Membership
 --	Cooperative
 --	Non-Profit Childcare Center
 --	Non-Profit Organization
@@ -1649,31 +1649,31 @@ ORDER BY
   SUM(InitialApprovalAmount)
 
 --      3,699,827       Rollover as Business Start-Ups (ROB
---      5,066,070 	    501(c) – Non Profit except 3,4,6,  ------------ NON PROFIT
---      5,668,657 	    501(c)19 – Non Profit Veterans   -------------- NON PROFIT
---     15,756,878	    Qualified Joint-Venture (spouses)
---     26,550,666 	    Tenant in Common
---     51,633,051 	    Tribal Concerns
+--      5,066,070 	501(c) Â– Non Profit except 3,4,6,  ------------ NON PROFIT
+--      5,668,657 	501(c)19 Â– Non Profit Veterans   -------------- NON PROFIT
+--     15,756,878	Qualified Joint-Venture (spouses)
+--     26,550,666 	Tenant in Common
+--     51,633,051 	Tribal Concerns
 --     79,440,266       Housing Co-op
 --    112,900,245       Joint Venture
 --    356,447,127       Trust
---    551,727,688       501(c)6 – Non Profit Membership  -------------- NON PROFIT
+--    551,727,688       501(c)6 Â– Non Profit Membership  -------------- NON PROFIT
 --    559,872,357       NULL
---    593,206,687	    Non-Profit Childcare Center  ------------------ NON PROFIT
---    949,138,784	    Employee Stock Ownership Plan(ESOP)
+--    593,206,687	Non-Profit Childcare Center  ------------------ NON PROFIT
+--    949,138,784	Employee Stock Ownership Plan(ESOP)
 --  1,022,798,328       Single Member LLC
---  1,886,227,575	    Cooperative     ------------------------------- NON PROFIT
---  2,971,762,076       501(c)3 – Non Profit   ------------------------ NON PROFIT
+--  1,886,227,575	Cooperative     ------------------------------- NON PROFIT
+--  2,971,762,076       501(c)3 Â– Non Profit   ------------------------ NON PROFIT
 --  4,650,001,804       Professional Association
---  8,750,916,554	    Limited Liability Partnership
+--  8,750,916,554	Limited Liability Partnership
 --  9,561,274,026     	Independent Contractors
--- 11,251,813,965	    Self-Employed Individuals
--- 13,785,436,245	    Partnership
--- 46,998,864,367	    Non-Profit Organization     ------------------- NON PROFIT
--- 58,803,298,182	    Sole Proprietorship
---130,812,076,450	    Subchapter S Corporation
---199,906,746,039	    Limited  Liability Company(LLC)
---297,236,747,724	    Corporation
+-- 11,251,813,965	Self-Employed Individuals
+-- 13,785,436,245	Partnership
+-- 46,998,864,367	Non-Profit Organization     ------------------- NON PROFIT
+-- 58,803,298,182	Sole Proprietorship
+--130,812,076,450	Subchapter S Corporation
+--199,906,746,039	Limited  Liability Company(LLC)
+--297,236,747,724	Corporation
 
 
 SELECT 
@@ -1681,10 +1681,10 @@ SELECT
 FROM 
   public_all 
 WHERE 
-  BusinessType = '501(c) – Non Profit except 3,4,6,' 
-  OR BusinessType = '501(c)19 – Non Profit Veterans' 
-  OR BusinessType = '501(c)3 – Non Profit' 
-  OR BusinessType = '501(c)6 – Non Profit Membership' 
+  BusinessType = '501(c) Â– Non Profit except 3,4,6,' 
+  OR BusinessType = '501(c)19 Â– Non Profit Veterans' 
+  OR BusinessType = '501(c)3 Â– Non Profit' 
+  OR BusinessType = '501(c)6 Â– Non Profit Membership' 
   OR BusinessType = 'Cooperative' 
   OR BusinessType = 'Non-Profit Childcare Center' 
   OR BusinessType = 'Non-Profit Organization'
@@ -1696,10 +1696,10 @@ SELECT
 FROM 
   public_all 
 WHERE 
-  BusinessType <> '501(c) – Non Profit except 3,4,6' 
-  OR BusinessType <> '501(c)19 – Non Profit Veterans' 
-  OR BusinessType <> '501(c)3 – Non Profit' 
-  OR BusinessType <> '501(c)6 – Non Profit Membership' 
+  BusinessType <> '501(c) Â– Non Profit except 3,4,6' 
+  OR BusinessType <> '501(c)19 Â– Non Profit Veterans' 
+  OR BusinessType <> '501(c)3 Â– Non Profit' 
+  OR BusinessType <> '501(c)6 Â– Non Profit Membership' 
   OR BusinessType <> 'Cooperative' 
   OR BusinessType <> 'Non-Profit Childcare Center' 
   OR BusinessType <> 'Non-Profit Organization'
@@ -1715,33 +1715,33 @@ WHERE
  UPDATE public_all
 SET BusinessType = 
     CASE 
-        WHEN BusinessType IS NULL AND InitialApprovalAmount < 100000      THEN '501(c) – Non Profit except 3,4,6,'
-        WHEN BusinessType IS NULL AND InitialApprovalAmount < 300000      THEN '501(c)19 – Non Profit Veterans'
-		WHEN BusinessType IS NULL AND InitialApprovalAmount < 1000000     THEN '501(c)6 – Non Profit Membership'
-		WHEN BusinessType IS NULL AND InitialApprovalAmount < 1500000     THEN 'Non-Profit Childcare Center'
-		WHEN BusinessType IS NULL AND InitialApprovalAmount < 2000000     THEN 'Cooperative'
-		WHEN BusinessType IS NULL AND InitialApprovalAmount < 3000000     THEN '501(c)3 – Non Profit'
-		WHEN BusinessType IS NULL AND InitialApprovalAmount < 4000000     THEN 'Non-Profit Organization'
+        WHEN BusinessType IS NULL AND InitialApprovalAmount < 100000      THEN '501(c) Â– Non Profit except 3,4,6,'
+        WHEN BusinessType IS NULL AND InitialApprovalAmount < 300000      THEN '501(c)19 Â– Non Profit Veterans'
+	WHEN BusinessType IS NULL AND InitialApprovalAmount < 1000000     THEN '501(c)6 Â– Non Profit Membership'
+	WHEN BusinessType IS NULL AND InitialApprovalAmount < 1500000     THEN 'Non-Profit Childcare Center'
+	WHEN BusinessType IS NULL AND InitialApprovalAmount < 2000000     THEN 'Cooperative'
+	WHEN BusinessType IS NULL AND InitialApprovalAmount < 3000000     THEN '501(c)3 Â– Non Profit'
+	WHEN BusinessType IS NULL AND InitialApprovalAmount < 4000000     THEN 'Non-Profit Organization'
 
-		WHEN BusinessType IS NULL AND InitialApprovalAmount < 4100000     THEN 'Rollover as Business Start-Ups (ROB'
-		WHEN BusinessType IS NULL AND InitialApprovalAmount < 4500000     THEN 'Qualified Joint-Venture (spouses)'
-		WHEN BusinessType IS NULL AND InitialApprovalAmount < 4800000     THEN 'Tenant in Common'
-		WHEN BusinessType IS NULL AND InitialApprovalAmount < 5000000     THEN 'Tribal Concerns'
-		WHEN BusinessType IS NULL AND InitialApprovalAmount < 5200000     THEN 'Housing Co-op'
-		WHEN BusinessType IS NULL AND InitialApprovalAmount < 6000000     THEN 'Joint Venture'
-		WHEN BusinessType IS NULL AND InitialApprovalAmount < 65000000    THEN 'Trust'
-		WHEN BusinessType IS NULL AND InitialApprovalAmount < 70000000    THEN 'Employee Stock Ownership Plan(ESOP)'
-		WHEN BusinessType IS NULL AND InitialApprovalAmount < 75000000    THEN 'Single Member LLC'
-		WHEN BusinessType IS NULL AND InitialApprovalAmount < 78000000    THEN 'Professional Association'
-		WHEN BusinessType IS NULL AND InitialApprovalAmount < 80000000    THEN 'Limited Liability Partnership'
-		WHEN BusinessType IS NULL AND InitialApprovalAmount < 83000000    THEN 'Independent Contractors'
-		WHEN BusinessType IS NULL AND InitialApprovalAmount < 86000000    THEN 'Self-Employed Individuals'
-		WHEN BusinessType IS NULL AND InitialApprovalAmount < 90000000    THEN 'Partnership'
-		WHEN BusinessType IS NULL AND InitialApprovalAmount < 92000000    THEN 'Sole Proprietorship'
-		WHEN BusinessType IS NULL AND InitialApprovalAmount < 95000000    THEN 'Subchapter S Corporation'
-		WHEN BusinessType IS NULL AND InitialApprovalAmount < 98000000    THEN 'Limited  Liability Company(LLC)'
-		WHEN BusinessType IS NULL AND InitialApprovalAmount < 98000000    THEN 'Corporation'
-        ELSE BusinessType
+	WHEN BusinessType IS NULL AND InitialApprovalAmount < 4100000     THEN 'Rollover as Business Start-Ups (ROB'
+	WHEN BusinessType IS NULL AND InitialApprovalAmount < 4500000     THEN 'Qualified Joint-Venture (spouses)'
+	WHEN BusinessType IS NULL AND InitialApprovalAmount < 4800000     THEN 'Tenant in Common'
+	WHEN BusinessType IS NULL AND InitialApprovalAmount < 5000000     THEN 'Tribal Concerns'
+	WHEN BusinessType IS NULL AND InitialApprovalAmount < 5200000     THEN 'Housing Co-op'
+	WHEN BusinessType IS NULL AND InitialApprovalAmount < 6000000     THEN 'Joint Venture'
+	WHEN BusinessType IS NULL AND InitialApprovalAmount < 65000000    THEN 'Trust'
+	WHEN BusinessType IS NULL AND InitialApprovalAmount < 70000000    THEN 'Employee Stock Ownership Plan(ESOP)'
+	WHEN BusinessType IS NULL AND InitialApprovalAmount < 75000000    THEN 'Single Member LLC'
+	WHEN BusinessType IS NULL AND InitialApprovalAmount < 78000000    THEN 'Professional Association'
+	WHEN BusinessType IS NULL AND InitialApprovalAmount < 80000000    THEN 'Limited Liability Partnership'
+	WHEN BusinessType IS NULL AND InitialApprovalAmount < 83000000    THEN 'Independent Contractors'
+	WHEN BusinessType IS NULL AND InitialApprovalAmount < 86000000    THEN 'Self-Employed Individuals'
+	WHEN BusinessType IS NULL AND InitialApprovalAmount < 90000000    THEN 'Partnership'
+	WHEN BusinessType IS NULL AND InitialApprovalAmount < 92000000    THEN 'Sole Proprietorship'
+	WHEN BusinessType IS NULL AND InitialApprovalAmount < 95000000    THEN 'Subchapter S Corporation'
+	WHEN BusinessType IS NULL AND InitialApprovalAmount < 98000000    THEN 'Limited  Liability Company(LLC)'
+	WHEN BusinessType IS NULL AND InitialApprovalAmount < 98000000    THEN 'Corporation'
+ELSE BusinessType
     END;
 
 --(11,335,950 rows affected)
@@ -1757,10 +1757,10 @@ SELECT
 FROM 
   public_all 
 WHERE 
-  BusinessType = '501(c) – Non Profit except 3,4,6,' 
-  OR BusinessType = '501(c)19 – Non Profit Veterans' 
-  OR BusinessType = '501(c)3 – Non Profit' 
-  OR BusinessType = '501(c)6 – Non Profit Membership' 
+  BusinessType = '501(c) Â– Non Profit except 3,4,6,' 
+  OR BusinessType = '501(c)19 Â– Non Profit Veterans' 
+  OR BusinessType = '501(c)3 Â– Non Profit' 
+  OR BusinessType = '501(c)6 Â– Non Profit Membership' 
   OR BusinessType = 'Cooperative' 
   OR BusinessType = 'Non-Profit Childcare Center' 
   OR BusinessType = 'Non-Profit Organization'
@@ -1772,10 +1772,10 @@ SELECT
 FROM 
   public_all 
 WHERE 
-  BusinessType <> '501(c) – Non Profit except 3,4,6' 
-  OR BusinessType <> '501(c)19 – Non Profit Veterans' 
-  OR BusinessType <> '501(c)3 – Non Profit' 
-  OR BusinessType <> '501(c)6 – Non Profit Membership' 
+  BusinessType <> '501(c) Â– Non Profit except 3,4,6' 
+  OR BusinessType <> '501(c)19 Â– Non Profit Veterans' 
+  OR BusinessType <> '501(c)3 Â– Non Profit' 
+  OR BusinessType <> '501(c)6 Â– Non Profit Membership' 
   OR BusinessType <> 'Cooperative' 
   OR BusinessType <> 'Non-Profit Childcare Center' 
   OR BusinessType <> 'Non-Profit Organization'
@@ -1829,12 +1829,12 @@ where
  update public_all
 set NonProfit =
 	CASE 
-        WHEN BusinessType = '501(c) – Non Profit except 3,4,6,'   THEN 'Non Profit'
-        WHEN BusinessType = '501(c)19 – Non Profit Veterans'      THEN 'Non Profit'
-		WHEN BusinessType = '501(c)6 – Non Profit Membership'     THEN 'Non Profit'
+        WHEN BusinessType = '501(c) Â– Non Profit except 3,4,6,'   THEN 'Non Profit'
+        WHEN BusinessType = '501(c)19 Â– Non Profit Veterans'      THEN 'Non Profit'
+		WHEN BusinessType = '501(c)6 Â– Non Profit Membership'     THEN 'Non Profit'
 		WHEN BusinessType = 'Non-Profit Childcare Center'	      THEN 'Non Profit'
 		WHEN BusinessType = 'Cooperative'                         THEN 'Non Profit'
-		WHEN BusinessType = '501(c)3 – Non Profit'                THEN 'Non Profit'
+		WHEN BusinessType = '501(c)3 Â– Non Profit'                THEN 'Non Profit'
 		WHEN BusinessType = 'Non-Profit Organization'             THEN 'Non Profit'
         ELSE 'Profit'
     END; 
@@ -1967,7 +1967,7 @@ group by
   s.NAICS_Industry_Description 
 order by 
   tot_amount desc
---screen shot (1)
+--Result in screen shot (1)
 
 SELECT 
   top (10) p.NAICSCode, 
@@ -1985,8 +1985,7 @@ group by
   s.NAICS_Industry_Description 
 order by 
   tot_amount asc
-
---screen shot (7)
+--Result inscreen shot (7)
 
 --total initial amount & Current Amount
 select 
@@ -1994,7 +1993,7 @@ select
   sum(CurrentApprovalAmount) as Tot_current_amount 
 from 
   public_all
---scrren shot (6)
+--Result in scrren shot (6)
 
 --Ratio between total initial amount & Current Amount
 select 
@@ -2044,7 +2043,7 @@ group by
   z.NAICS_Industry_Description 
 order by 
   TOT_amount asc
- --screen shot (5)
+ --Result in screen shot (5)
  --------------------------------------------------------
 
 --top (10) and bottom (10) city & state that borrowed money
@@ -2061,7 +2060,7 @@ group by
   b.BorrowerState 
 order by 
   total_amount desc
---screen shot (3)
+--Result in screen shot (3)
 
 
 select 
@@ -2096,7 +2095,7 @@ set
 where 
   loannumber = 9670727706
 --(1 row affected)
---screen shot (4) modified
+--Result in screen shot (4) modified
 
 --------------------------------------------------------
 
@@ -2114,7 +2113,7 @@ having
 order by 
   year(dateapproved), 
   month(dateapproved)  
---screen shot (8)
+--Result in screen shot (8)
 ------------------------------------------------------------
 
 -- to be continued with Asking specific Questions to answer  
