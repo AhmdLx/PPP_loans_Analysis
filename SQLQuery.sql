@@ -2117,7 +2117,7 @@ order by
 ------------------------------------------------------------
 
 -- to be continued with Asking specific Questions to answer  
--- Then retrieve the Data and make a project with Excel to Answer These Questions
+-- Then retrieve the Data and make a project with Power BI to Answer These Questions
 
 -- stay tunned :)
  
