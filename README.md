@@ -36,14 +36,11 @@ Thank you for your interest in our project.
 ### Data Sources 🔗
 ### PPP Loan Data
 The PPP loan data used in this analysis was obtained from the U.S. Small Business Administration (SBA) through the Freedom of Information Act (FOIA). The dataset contains detailed information about the Paycheck Protection Program loans distributed during the COVID-19 pandemic.
-### Dataset Link:
 [Dataset Link](https://data.sba.gov/dataset/ppp-foia)
 [PPP Loan Data - SBA FOIA]()
 
-# Size Standards Reference
+#### Size Standards Reference
 The Size Standards Reference provides information about the size standards used by the Small Business Administration (SBA) to classify businesses. These standards are used to determine eligibility for various SBA programs, including PPP loans.
-
-# Document Link:
 [SBA Size Standards Reference](https://www.sba.gov/document/support-table-size-standards)https://www.sba.gov/document/support-table-size-standards
 
 
