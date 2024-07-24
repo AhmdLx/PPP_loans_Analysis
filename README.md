@@ -31,7 +31,6 @@ The analysis revealed valuable insights into PPP loan distribution across differ
 
 #### Note:
 The queries provided in this README are high-level summaries. For detailed SQL queries and specific code, please refer to the corresponding code files in the repository.
-###### Future Work To be continued... 📈 
 
 Thank you for your interest in our project.
 ### Data Sources 🔗
